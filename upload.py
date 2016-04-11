@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 # upload objects to swift cluster
-
+# 
 import logging
 import logging.handlers
 import argparse
