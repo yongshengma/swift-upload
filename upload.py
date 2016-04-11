@@ -13,6 +13,8 @@ from subprocess import Popen, PIPE
 dirbase = "/jxq.getanddownload.shell/upload/"
 tenants = ['cmbc','cmcc','cebb','shell']
 
+after_t = (31+30+31)*24*60*60   # seconds; expire after 3 months
+
 # Deafults
 LOG_LEVEL = logging.INFO  # Could be e.g. "DEBUG" or "WARNING"
 
@@ -179,7 +181,7 @@ def putOne(filename, v):  # filename is full pathed
             break
         try:
             container = v['container']
-            expiration = v['timestamp'] + (31+30+31)*24*60*60   # expire after 3 months
+            expiration = v['timestamp'] + after_t # expire after
 
             # token is dummied for concise as it's too long when cmd is logged 
             lcmd = 'curl -i -X PUT -T %s -H "X-Delete-At:%d" -H "X-Auth-Token:%s" %s/%s/%s/%s/' \
