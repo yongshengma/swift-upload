@@ -13,7 +13,7 @@ from subprocess import Popen, PIPE
 dirbase = "/jxq.getanddownload.shell/upload/"
 tenants = ['cmbc','cmcc','cebb','shell']
 
-after_t = (31+30+31)*24*60*60   # seconds; expire after 3 months
+after_t = (31+30+31+30)*24*60*60   # seconds; expire after 4 months
 
 # Deafults
 LOG_LEVEL = logging.INFO  # Could be e.g. "DEBUG" or "WARNING"
